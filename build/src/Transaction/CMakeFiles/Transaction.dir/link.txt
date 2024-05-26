@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTransaction.a CMakeFiles/Transaction.dir/Transaction.cpp.o CMakeFiles/Transaction.dir/WithdrawTransaction.cpp.o CMakeFiles/Transaction.dir/DepositTransaction.cpp.o CMakeFiles/Transaction.dir/TransactionInvoker.cpp.o
+/usr/bin/ranlib libTransaction.a
