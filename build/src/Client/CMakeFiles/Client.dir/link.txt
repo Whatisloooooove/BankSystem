@@ -1,2 +1,0 @@
-/usr/bin/ar qc libClient.a CMakeFiles/Client.dir/Client.cpp.o CMakeFiles/Client.dir/ClientBuilder.cpp.o
-/usr/bin/ranlib libClient.a
