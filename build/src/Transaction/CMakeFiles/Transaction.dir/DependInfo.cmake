@@ -8,18 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/src/Transaction/DepositTransaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/DepositTransaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/DepositTransaction.cpp.o.d"
-  "/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/src/Transaction/Transaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/Transaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/Transaction.cpp.o.d"
-  "/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/src/Transaction/TransactionInvoker.cpp" "src/Transaction/CMakeFiles/Transaction.dir/TransactionInvoker.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/TransactionInvoker.cpp.o.d"
-  "/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/src/Transaction/WithdrawTransaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/WithdrawTransaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/WithdrawTransaction.cpp.o.d"
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/src/Transaction/DepositTransaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/DepositTransaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/DepositTransaction.cpp.o.d"
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/src/Transaction/Transaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/Transaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/Transaction.cpp.o.d"
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/src/Transaction/TransactionInvoker.cpp" "src/Transaction/CMakeFiles/Transaction.dir/TransactionInvoker.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/TransactionInvoker.cpp.o.d"
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/src/Transaction/WithdrawTransaction.cpp" "src/Transaction/CMakeFiles/Transaction.dir/WithdrawTransaction.cpp.o" "gcc" "src/Transaction/CMakeFiles/Transaction.dir/WithdrawTransaction.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/build/src/Account/CMakeFiles/Account.dir/DependInfo.cmake"
+  "/home/whatislove/Desktop/Programming/c++/BankSystem/build/src/Client/CMakeFiles/Client.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

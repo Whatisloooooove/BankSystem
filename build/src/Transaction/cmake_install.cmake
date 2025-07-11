@@ -1,4 +1,4 @@
-# Install script for directory: /home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/src/Transaction
+# Install script for directory: /home/whatislove/Desktop/Programming/c++/BankSystem/src/Transaction
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

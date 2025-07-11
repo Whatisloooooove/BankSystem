@@ -1,4 +1,4 @@
-# Install script for directory: /home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024
+# Install script for directory: /home/whatislove/Desktop/Programming/c++/BankSystem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/build/src/Account/cmake_install.cmake")
-  include("/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/build/src/Client/cmake_install.cmake")
-  include("/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/build/src/Transaction/cmake_install.cmake")
+  include("/home/whatislove/Desktop/Programming/c++/BankSystem/build/src/Account/cmake_install.cmake")
+  include("/home/whatislove/Desktop/Programming/c++/BankSystem/build/src/Client/cmake_install.cmake")
+  include("/home/whatislove/Desktop/Programming/c++/BankSystem/build/src/Transaction/cmake_install.cmake")
 
 endif()
 
@@ -58,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/whatislove/Рабочий стол/PROgramming/TP/Project/banksystemtp2024/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/whatislove/Desktop/Programming/c++/BankSystem/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
