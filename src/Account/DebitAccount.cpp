@@ -1,8 +1,8 @@
-#include "DebitAccount.hpp"
+#include <DebitAccount.hpp>
 
 void DebitAccount::Withdraw(double amount) {
   if (amount > Account::balance_) {
-    std::cout << "Insufficient funds";
+    std::cout << "Недостаточно средств для выполнения операции";
   } else {
     Account::balance_ -= amount;
   }

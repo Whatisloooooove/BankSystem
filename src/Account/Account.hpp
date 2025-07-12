@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdint.h>
 #include <string>
 #include <vector>
 
@@ -8,18 +9,18 @@ class Account {
  public:
   Account() = default;
 
-  Account(double money);
-
-  Account(int64_t id, double amount);
-
-  int64_t CreateId();
-
-  int64_t GetId() const;
+  Account(double amount);
+  Account(uint64_t id, double amount);
+  
+  uint64_t GetId() const;
   double GetBalance();
   virtual void Withdraw(double amount) = 0;
   virtual void Deposit(double amount) = 0;
 
+ private:
+  uint64_t CreateId();
+
  protected:
-  int64_t id_;
+  uint64_t id_;
   double balance_;
 };
