@@ -1,13 +1,29 @@
 #include <memory>
 #include <string>
 
-#include "Admin.hpp"
-#include "Client.hpp"
+#include <Admin.hpp>
+#include <Client.hpp>
 
 class ClientBuilder {
  public:
-  std::shared_ptr<Client> InputClientInformation(std::string first_name, std::string last_name, std::string address, std::string passport);
-  void CreateAccount();
+ 
+  void SetFirstName(std::string first_name) { 
+    first_name_ = first_name; 
+  }
+
+  void SetLastName(std::string last_name) { 
+    last_name_ = last_name; 
+  }
+
+  void SetPassport(std::string passport) {
+    passport_ = passport;
+  }
+
+  void SetAddress(std::string address) {
+    address_ = address;
+  }
+
+  std::shared_ptr<Client> CreateAccount();
 
  private:
   std::string first_name_;
