@@ -32,3 +32,16 @@ std::string Client::GetLastName() const { return last_name_; }
 std::string Client::GetAddress() const { return address_; }
 
 std::string Client::GetPassport() const { return passport_; }
+
+std::shared_ptr<Account> CreateAccount(double amount) {
+  std::shared_ptr<Account> acc = std::make_shared<Account>(amount);
+  accounts_[acc->id_] = acc;
+  return acc;
+}
+
+std::shared_ptr<Account> GetAccountById(uint64_t id) { return accounts_[id]; }
+
+auto GetAllAccounts() -> std::unordered_map < uint64_t,
+    std::shared_ptr<Account> {
+  return accounts_;
+}

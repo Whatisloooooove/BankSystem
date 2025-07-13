@@ -1,5 +1,4 @@
 #include <Account.hpp>
-
 #include <random>
 
 Account::Account(double amount) : id_(CreateId()), balance_(amount) {}
@@ -16,4 +15,15 @@ uint64_t Account::CreateId() {
 
 uint64_t Account::GetId() const { return id_; }
 
-double Account::GetBalance() { return balance_; }
+double Account::GetBalance() const { return balance_; }
+
+void AddToHistory(std::shared_ptr<Command>& transaction) {
+  history_.push_back(transaction);
+}
+
+std::vector<std::shared_ptr<Command>> GetHistory() { return history_; }
+
+void CancelLastCommand() {
+  history_.back().Undo();
+  history_.pop_back();
+}

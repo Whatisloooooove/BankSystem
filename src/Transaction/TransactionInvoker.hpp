@@ -6,12 +6,17 @@
 
 class TransactionInvoker {
  private:
-  std::set<std::shared_ptr<Transaction>> transactions_;
+  using CommandHistory = std::vector<std::shared_ptr<Command>>;
+  using AccountMap = std::unordered_map<uint64_t, std::shared_ptr<Account>>;
+
+  std::vector<std::shared_ptr<Command>> transactions_;
 
  public:
-  void AddTransaction(std::shared_ptr<Transaction> transaction);
+  void ExecuteTransaction(std::shared_ptr<Command> transaction);
 
-  void ExecuteTransactions();
+  void CancelLastTransaction();
 
-  void CancelTransaction(int64_t id_source, int64_t id_target, int64_t amount);
+  void CancelLastTransactionClientAccount(std::shared_ptr<Account> account);
+
+  CommandHistory GetClientHistory(AccountMap accounts);
 };

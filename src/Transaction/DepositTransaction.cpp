@@ -1,11 +1,13 @@
-#include "DepositTransaction.hpp"
+#include <DepositTransaction.hpp>
 
-void DepositTransaction::ExecuteTransaction() {
-  source->Deposit(amount_money);
-  std::cout << "Depositing " << amount_money << " to account "
-            << target->GetId() << '\n';
+void Execute() final {
+  account_->Deposit(amount_);
+  std::cout << "Успешное пополнение счёта " << account_->GetId() << " на сумму "
+            << amount_ << '\n';
 }
 
-DepositTransaction::DepositTransaction(std::shared_ptr<Account>& account,
-                                       double amount)
-    : Transaction(account, account, amount) {}
+void Undo() final {
+  account_->Withdraw(amount_);
+  std::cout << "Отмена пополнения счёта " << account_->GetId() << " на сумму "
+            << amount_ << '\n';
+}
