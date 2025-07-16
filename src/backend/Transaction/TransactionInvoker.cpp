@@ -1,7 +1,7 @@
-#include <TransactionInvoker.hpp>
+#include "TransactionInvoker.hpp"
 
 void TransactionInvoker::ExecuteTransaction(std::shared_ptr<Command> transaction) {
-  transactions_.insert(transaction);
+  transactions_.push_back(transaction);
   transaction->Execute();
 }
 
@@ -16,12 +16,12 @@ void TransactionInvoker::CancelLastTransactionClientAccount(std::shared_ptr<Acco
   account->CancelLastCommand();
 }
 
-CommandHistory GetClientHistory(AccountMap accounts) {
-  std::vector<std::shared_ptr<Account>> history;
+std::vector<std::shared_ptr<Command>> TransactionInvoker::GetClientHistory(AccountMap accounts) {
+  std::vector<std::shared_ptr<Command>> history;
   for (auto [id, account] : accounts) {
-    auto account_history = account.GetHistory();
+    auto account_history = account->GetHistory();
     for (auto transaction : account_history) {
-      history.push_back(transaction);
+      history.emplace_back(transaction);
     }
   }
   return history;

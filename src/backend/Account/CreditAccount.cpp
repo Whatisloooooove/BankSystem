@@ -1,10 +1,10 @@
-#include <CreditAccount.hpp>
+#include "CreditAccount.hpp"
 
 CreditAccount::CreditAccount(double amount)
-    : penalty(0.005 * amount), Account(amount) {}
+    : Account(amount), penalty(0.005 * amount) {}
 
-CreditAccount::CreditAccount(int64_t id, double amount)
-    : penalty(0.005 * amount), Account(id, amount) {}
+CreditAccount::CreditAccount(uint64_t id, double amount)
+    : Account(id, amount), penalty(0.005 * amount) {}
 
 void CreditAccount::Withdraw(double amount) {
   if (Account::balance_ - amount < 0.0) {

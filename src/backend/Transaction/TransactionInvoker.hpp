@@ -1,12 +1,13 @@
+#include <iostream>
 #include <memory>
-#include <set>
-#include <unordered_set>
+#include <vector>
+#include <unordered_map>
 
-#include "Transaction.hpp"
+#include "../Account/Account.hpp"
+#include "Command.hpp"
 
 class TransactionInvoker {
  private:
-  using CommandHistory = std::vector<std::shared_ptr<Command>>;
   using AccountMap = std::unordered_map<uint64_t, std::shared_ptr<Account>>;
 
   std::vector<std::shared_ptr<Command>> transactions_;
@@ -18,5 +19,5 @@ class TransactionInvoker {
 
   void CancelLastTransactionClientAccount(std::shared_ptr<Account> account);
 
-  CommandHistory GetClientHistory(AccountMap accounts);
+  std::vector<std::shared_ptr<Command>> GetClientHistory(AccountMap accounts);
 };

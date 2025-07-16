@@ -1,4 +1,4 @@
-#include <Client.hpp>
+#include "Client.hpp"
 
 Client::Client() = default;
 Client::Client(std::string first_name, std::string last_name)
@@ -29,19 +29,37 @@ std::string Client::GetFirstName() const { return first_name_; }
 
 std::string Client::GetLastName() const { return last_name_; }
 
-std::string Client::GetAddress() const { return address_; }
+std::optional<std::string> Client::GetAddress() const { return address_; }
 
-std::string Client::GetPassport() const { return passport_; }
+std::optional<std::string> Client::GetPassport() const { return passport_; }
 
-std::shared_ptr<Account> CreateAccount(double amount) {
-  std::shared_ptr<Account> acc = std::make_shared<Account>(amount);
-  accounts_[acc->id_] = acc;
+std::shared_ptr<Account> Client::CreateDebitAccount(double amount) {
+  std::shared_ptr<Account> acc = std::make_shared<DebitAccount>(amount);
+  accounts_[acc->GetId()] = acc;
   return acc;
 }
 
-std::shared_ptr<Account> GetAccountById(uint64_t id) { return accounts_[id]; }
+std::shared_ptr<Account> Client::CreateCreditAccount(double amount) {
+  std::shared_ptr<Account> acc = std::make_shared<CreditAccount>(amount);
+  accounts_[acc->GetId()] = acc;
+  return acc;
+}
 
-auto GetAllAccounts() -> std::unordered_map < uint64_t,
-    std::shared_ptr<Account> {
+std::shared_ptr<Account> Client::CreateDepositAccount(double amount, time_t time) {
+  std::shared_ptr<Account> acc = std::make_shared<DepositAccount>(amount, time);
+  accounts_[acc->GetId()] = acc;
+  return acc;
+}
+
+
+std::optional<std::shared_ptr<Account>> Client::GetAccountById(uint64_t id) {
+  if (accounts_.find(id) != accounts_.end()) {
+    return accounts_[id];
+  }
+  return std::nullopt;
+}
+
+const std::unordered_map<uint64_t, std::shared_ptr<Account>>& Client::GetAllAccounts()
+    const {
   return accounts_;
 }

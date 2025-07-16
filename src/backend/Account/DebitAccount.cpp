@@ -1,4 +1,8 @@
-#include <DebitAccount.hpp>
+#include "DebitAccount.hpp"
+
+DebitAccount::DebitAccount(double balance) : Account(balance) {}
+
+DebitAccount::DebitAccount(uint64_t id, double balance) : Account(id, balance) {}
 
 void DebitAccount::Withdraw(double amount) {
   if (amount > Account::balance_) {
@@ -8,7 +12,3 @@ void DebitAccount::Withdraw(double amount) {
   }
 }
 void DebitAccount::Deposit(double amount) { Account::balance_ += amount; }
-
-DebitAccount::DebitAccount(double balance) : Account(balance) {}
-
-DebitAccount::DebitAccount(int64_t id, double balance) : Account(id, balance) {}

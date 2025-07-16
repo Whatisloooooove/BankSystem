@@ -1,8 +1,10 @@
+#include <iostream>
+#include <optional>
 #include <memory>
 #include <string>
 
-#include <Admin.hpp>
-#include <Client.hpp>
+#include "Admin.hpp"
+#include "Client.hpp"
 
 class ClientBuilder {
  public:
@@ -28,6 +30,6 @@ class ClientBuilder {
  private:
   std::string first_name_;
   std::string last_name_;
-  std::string address_;
-  std::string passport_;
+  std::optional<std::string> address_;
+  std::optional<std::string> passport_;
 };

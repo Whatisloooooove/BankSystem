@@ -1,17 +1,17 @@
-#include <Command.hpp>
 #include <iostream>
-#include <src/Account/Account.hpp>
+
+#include "../Account/Account.hpp"
+#include "Command.hpp"
 
 class WithdrawTransaction : public Command {
  public:
-  WithdrawTransaction(std::shared_ptr<Account>& account, double amount)
-      : account_(account), amount_(amount) {}
+  WithdrawTransaction(std::shared_ptr<Account>& account, double amount);
 
   void Execute() final;
 
   void Undo() final;
 
  private:
-  double amount_;
   std::shared_ptr<Account> account_;
+  double amount_;
 };
